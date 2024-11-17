@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <locale.h>
 
 //crio uma função 
 void gerarSenha(int comprimento) {
@@ -11,6 +12,7 @@ void gerarSenha(int comprimento) {
 
    //Crio o gerador de senha usando a logica do FOR
     printf("Senha gerada: ");
+	
     for (int i = 0; i < comprimento; i++) {
         printf("%c", caracteres[rand() % tamanho]);
     }
@@ -20,6 +22,9 @@ void gerarSenha(int comprimento) {
 
 //Crio minha fução main
 int main() {
+	
+    setlocale(LC_ALL, "Portuguese");
+	
     int comprimento;
 
     // Inicializo o gerador
